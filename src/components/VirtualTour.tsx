@@ -73,16 +73,16 @@ export default function VirtualTour() {
             <div className="flex items-center gap-4 mb-4 md:mb-6">
               <div className="h-px w-8 bg-burgundy/20" />
               <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-burgundy/60">
-                Không gian 3D Sống động
+                Hình ảnh 360° Sống động
               </span>
               <div className="h-px w-8 bg-burgundy/20" />
             </div>
             <h2 className="text-4xl md:text-8xl font-serif font-bold mb-6 md:mb-10 leading-[0.85] tracking-tight">
-              Mô hình <br />
-              <span className="italic font-normal text-burgundy">Văn miếu 3D</span>
+              Hình ảnh <br />
+              <span className="italic font-normal text-burgundy">Văn miếu 360°</span>
             </h2>
             <p className="text-base md:text-lg text-olive/80 font-serif italic leading-relaxed max-w-2xl">
-              "Chúng tôi đã tái hiện không gian 3D chân thực. 
+              "Chúng tôi đã tái hiện hình ảnh 360° chân thực. 
               Hãy xoay góc nhìn để khám phá khuôn viên Văn Miếu từ bên trong với sự tự do 360°."
             </p>
           </div>

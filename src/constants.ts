@@ -141,7 +141,7 @@ export const TEMPLE_AREAS = [
     id: "thien-quang-well",
     name: "Giếng Thiên Quang",
     description: "Giếng hình vuông tượng trưng cho đất, mặt nước phẳng lặng soi bóng bầu trời, thể hiện tâm hồn trong sáng của người quân tử.",
-    image: "/images/giengthienquan.jpg",
+    image: "/images/giengthienquang.jpg",
     coordinates: { x: 50, y: 74 }
   },
   {
