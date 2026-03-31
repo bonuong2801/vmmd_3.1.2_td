@@ -254,11 +254,11 @@ function HomePage() {
                 </div>
                 <div className="flex gap-4 items-center">
                   <Mail size={16} className="text-gold shrink-0" />
-                  <p className="text-white/90 text-[11px] md:text-sm font-semibold">contact@vanmieumaodien.vn</p>
+                  <p className="text-white/90 text-[11px] md:text-sm font-semibold">duong28012009@gmail.com</p>
                 </div>
                 <div className="flex gap-4 items-center">
                   <Phone size={16} className="text-gold/80 shrink-0" />
-                  <p className="text-white/90 text-[11px] md:text-sm font-semibold">+84 (0) 123 456 789</p>
+                  <p className="text-white/90 text-[11px] md:text-sm font-semibold">+84 (0) 868 814 282</p>
                 </div>
               </div>
             </div>
