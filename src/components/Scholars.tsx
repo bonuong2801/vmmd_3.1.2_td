@@ -22,16 +22,16 @@ export default function Scholars() {
               <div className="w-10 h-10 bg-burgundy/10 rounded-lg flex items-center justify-center border border-burgundy/20">
                 <GraduationCap className="text-burgundy" size={20} />
               </div>
-              <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-burgundy/60 block">
+              <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-burgundy/90 block">
                 Bảng vàng danh dự
               </span>
             </div>
             <h2 className="text-[clamp(2.5rem,10vw,5rem)] md:text-[clamp(5rem,15vw,9rem)] font-serif font-bold leading-[0.85] tracking-tighter">
               Những bậc <br />
-              <span className="italic font-normal text-burgundy">Hiền tài</span>
+              <span className="italic font-semibold text-burgundy">Hiền tài</span>
             </h2>
           </div>
-          <p className="text-olive/70 font-serif italic leading-relaxed max-w-xs text-sm md:text-base text-left">
+          <p className="text-stone-900 font-serif font-semibold italic leading-relaxed max-w-xs text-sm md:text-base text-left">
             "Hiền tài là nguyên khí của quốc gia, nguyên khí thịnh thì thế nước mạnh, rồi lên cao..."
           </p>
         </div>
@@ -61,7 +61,7 @@ export default function Scholars() {
                 <div className="absolute top-4 right-4 w-12 h-12 border-t border-r border-gold/40" />
                 
                 <div className="absolute bottom-10 left-10 right-10">
-                  <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-gold/60 mb-3 block">
+                  <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-gold/90 mb-3 block">
                     {scholar.period}
                   </span>
                   <h3 className="text-4xl font-serif font-bold text-white leading-tight mb-6 group-hover:text-gold transition-colors">
@@ -76,11 +76,11 @@ export default function Scholars() {
               </div>
 
               <div className="space-y-5 px-4">
-                <div className="flex items-center gap-4 text-burgundy/40">
-                  <div className="w-10 h-px bg-burgundy/20" />
+                <div className="flex items-center gap-4 text-burgundy/70">
+                  <div className="w-10 h-px bg-burgundy/40" />
                   <span className="text-[10px] font-bold tracking-[0.2em] uppercase">{scholar.title}</span>
                 </div>
-                <p className="text-olive/80 text-lg font-serif italic leading-relaxed line-clamp-2">
+                <p className="text-stone-900 text-lg font-serif font-semibold italic leading-relaxed line-clamp-2">
                   "{scholar.achievement}"
                 </p>
               </div>

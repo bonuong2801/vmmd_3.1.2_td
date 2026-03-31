@@ -191,16 +191,16 @@ export default function PuzzleGame() {
           >
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="h-px w-8 bg-burgundy/20" />
-              <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-burgundy/60">
+              <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-burgundy/90">
                 Thử thách trí tuệ
               </span>
               <div className="h-px w-8 bg-burgundy/20" />
             </div>
             <h2 className="text-[clamp(2.5rem,10vw,5rem)] md:text-[clamp(5rem,15vw,9rem)] font-serif font-bold mb-6 md:mb-10 leading-[0.85] tracking-tighter">
               Đấu trường <br />
-              <span className="italic font-normal text-burgundy">Khoa bảng</span>
+              <span className="italic font-semibold text-burgundy">Khoa bảng</span>
             </h2>
-            <p className="text-base md:text-lg text-olive/80 font-serif italic leading-relaxed max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-stone-900 font-serif font-semibold italic leading-relaxed max-w-2xl mx-auto">
               "Vượt qua các cấp độ thử thách để chứng minh kiến thức của bạn về di sản Văn Miếu Mao Điền."
             </p>
           </motion.div>
@@ -219,11 +219,11 @@ export default function PuzzleGame() {
             >
               <div className="flex items-center gap-4 md:gap-8">
                 <div className="px-4 md:px-6 py-2 md:py-3 bg-white/5 rounded-xl md:rounded-2xl border border-white/10 shadow-sm backdrop-blur-sm">
-                  <span className="text-[10px] md:text-[12px] font-bold uppercase tracking-widest text-gold/40 block mb-0.5 md:mb-1">Cấp độ</span>
+                  <span className="text-[10px] md:text-[12px] font-bold uppercase tracking-widest text-gold/80 block mb-0.5 md:mb-1">Cấp độ</span>
                   <span className="text-xl md:text-3xl font-serif text-white">{currentLevel}/{GAME_LEVELS.length}</span>
                 </div>
                 <div className="px-4 md:px-6 py-2 md:py-3 bg-white/5 rounded-xl md:rounded-2xl border border-white/10 shadow-sm backdrop-blur-sm">
-                  <span className="text-[10px] md:text-[12px] font-bold uppercase tracking-widest text-gold/40 block mb-0.5 md:mb-1">Thời gian</span>
+                  <span className="text-[10px] md:text-[12px] font-bold uppercase tracking-widest text-gold/80 block mb-0.5 md:mb-1">Thời gian</span>
                   <span className="text-xl md:text-3xl font-mono text-white">{formatTime(time)}</span>
                 </div>
                 <button
@@ -267,7 +267,7 @@ export default function PuzzleGame() {
                       disabled={!unlockedLevels.includes(l.level)}
                       className={`relative w-[calc(50%-0.75rem)] sm:w-[calc(33.333%-1rem)] lg:w-[calc(16.666%-1rem)] p-4 md:p-6 rounded-[1.5rem] md:rounded-[2.5rem] border transition-all duration-500 flex flex-col items-center gap-3 md:gap-4 group ${
                         unlockedLevels.includes(l.level)
-                          ? "bg-white/5 border-white/10 hover:border-gold/40 hover:-translate-y-2 hover:shadow-2xl"
+                          ? "bg-white/5 border-white/10 hover:border-gold/80 hover:-translate-y-2 hover:shadow-2xl"
                           : "bg-stone-100/10 border-transparent opacity-20 cursor-not-allowed"
                       }`}
                     >
@@ -282,7 +282,7 @@ export default function PuzzleGame() {
                         )}
                       </div>
                       <div className="text-center relative z-10">
-                        <span className="text-[8px] md:text-[9px] font-bold uppercase tracking-widest text-gold/40 mb-0.5 md:mb-1 block">Cấp {l.level}</span>
+                        <span className="text-[8px] md:text-[9px] font-bold uppercase tracking-widest text-gold/80 mb-0.5 md:mb-1 block">Cấp {l.level}</span>
                         <span className="text-[10px] md:text-[11px] font-medium tracking-tight text-white line-clamp-1">{l.title}</span>
                       </div>
                       {l.type === "quiz" && unlockedLevels.includes(l.level) && (
@@ -316,7 +316,7 @@ export default function PuzzleGame() {
                       </div>
                     )}
                   </div>
-                  <p className="text-gold/60 text-xs md:text-sm font-serif italic tracking-wide">{levelData.description}</p>
+                  <p className="text-gold/90 font-medium text-xs md:text-sm font-serif italic tracking-wide">{levelData.description}</p>
                 </div>
 
                 {levelData.type === "matching" ? (
@@ -334,14 +334,14 @@ export default function PuzzleGame() {
                               ? "bg-burgundy text-white border-gold shadow-2xl scale-[1.02]"
                               : error && selectedLeft === pair.id
                               ? "bg-rose-500/10 border-rose-500/20 text-rose-400 animate-shake"
-                              : "bg-white/5 border-white/10 hover:border-gold/40 text-white"
+                              : "bg-white/5 border-white/10 hover:border-gold/80 text-white"
                           }`}
                         >
                           <span className="font-serif text-base md:text-xl tracking-tight">{pair.left}</span>
                           {matches.includes(pair.id) ? (
                             <CheckCircle2 size={18} className="text-emerald-500 md:w-5 md:h-5" />
                           ) : (
-                            <div className={`w-4 h-4 md:w-5 md:h-5 rounded-full border-2 transition-colors duration-500 ${selectedLeft === pair.id ? "border-white bg-white" : "border-gold/20 group-hover:border-gold/40"}`} />
+                            <div className={`w-4 h-4 md:w-5 md:h-5 rounded-full border-2 transition-colors duration-500 ${selectedLeft === pair.id ? "border-white bg-white" : "border-gold/20 group-hover:border-gold/80"}`} />
                           )}
                         </button>
                       ))}
@@ -360,14 +360,14 @@ export default function PuzzleGame() {
                               ? "bg-burgundy text-white border-gold shadow-2xl scale-[1.02]"
                               : error && selectedRight === pair.id
                               ? "bg-rose-500/10 border-rose-500/20 text-rose-400 animate-shake"
-                              : "bg-white/5 border-white/10 hover:border-gold/40 text-white"
+                              : "bg-white/5 border-white/10 hover:border-gold/80 text-white"
                           }`}
                         >
-                          <span className="text-xs md:text-sm font-serif leading-relaxed italic pr-4 md:pr-6 text-gold/60 group-hover:text-white transition-colors">{pair.right}</span>
+                          <span className="text-xs md:text-sm font-serif leading-relaxed italic pr-4 md:pr-6 text-gold/90 font-medium group-hover:text-white transition-colors">{pair.right}</span>
                           {matches.includes(pair.id) ? (
                             <CheckCircle2 size={18} className="text-emerald-500 md:w-5 md:h-5" />
                           ) : (
-                            <div className={`w-4 h-4 md:w-5 md:h-5 rounded-full border-2 transition-colors duration-500 ${selectedRight === pair.id ? "border-white bg-white" : "border-gold/20 group-hover:border-gold/40"}`} />
+                            <div className={`w-4 h-4 md:w-5 md:h-5 rounded-full border-2 transition-colors duration-500 ${selectedRight === pair.id ? "border-white bg-white" : "border-gold/20 group-hover:border-gold/80"}`} />
                           )}
                         </button>
                       ))}
@@ -384,7 +384,7 @@ export default function PuzzleGame() {
                         <motion.div
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
-                          className="mt-4 p-4 bg-gold/20 border border-gold/40 rounded-xl text-gold text-sm italic font-serif"
+                          className="mt-4 p-4 bg-gold/20 border border-gold/80 rounded-xl text-gold text-sm italic font-serif"
                         >
                           Gợi ý: Đáp án đúng là "{levelData.questions[currentQuestionIndex].answer}"
                         </motion.div>
@@ -401,10 +401,10 @@ export default function PuzzleGame() {
                               ? "bg-emerald-600 text-white border-gold shadow-xl"
                               : error && !quizFeedback
                               ? "bg-white/5 border-white/10 opacity-20"
-                              : "bg-white/5 border-white/10 hover:border-gold/40 hover:bg-white/10 text-white shadow-sm"
+                              : "bg-white/5 border-white/10 hover:border-gold/80 hover:bg-white/10 text-white shadow-sm"
                           }`}
                         >
-                          <div className="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center text-[10px] font-bold text-gold/40 group-hover:bg-burgundy group-hover:text-gold transition-colors shrink-0 border border-white/10">
+                          <div className="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center text-[10px] font-bold text-gold/80 group-hover:bg-burgundy group-hover:text-gold transition-colors shrink-0 border border-white/10">
                             {String.fromCharCode(65 + idx)}
                           </div>
                           <span className="text-xl font-serif italic">{option}</span>
@@ -493,7 +493,7 @@ export default function PuzzleGame() {
                   <CheckCircle2 size={48} className="text-gold" />
                 </div>
                 <h3 className="text-5xl font-serif font-bold text-white mb-6 tracking-tight">Hoàn thành Cấp {currentLevel}!</h3>
-                <p className="text-gold/70 mb-12 max-w-md font-serif italic leading-relaxed text-xl">
+                <p className="text-gold font-medium mb-12 max-w-md font-serif italic leading-relaxed text-xl">
                   "Tuyệt vời! Bạn đã vượt qua thử thách về {levelData.title.toLowerCase()}. 
                   Sẵn sàng cho cấp độ tiếp theo chưa?"
                 </p>
@@ -518,15 +518,15 @@ export default function PuzzleGame() {
                 <h3 className="text-6xl font-serif font-bold text-white mb-8 tracking-tight">Bậc thầy Mao Điền!</h3>
                 <div className="flex gap-20 mb-16">
                   <div className="text-center">
-                    <div className="text-[10px] font-bold uppercase tracking-[0.4em] text-gold/40 mb-3">Tổng Thời gian</div>
+                    <div className="text-[10px] font-bold uppercase tracking-[0.4em] text-gold/80 mb-3">Tổng Thời gian</div>
                     <div className="text-5xl font-mono text-white tracking-tighter">{formatTime(time)}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-[10px] font-bold uppercase tracking-[0.4em] text-gold/40 mb-3">Tổng Điểm</div>
+                    <div className="text-[10px] font-bold uppercase tracking-[0.4em] text-gold/80 mb-3">Tổng Điểm</div>
                     <div className="text-5xl font-mono text-white tracking-tighter">{score}</div>
                   </div>
                 </div>
-                <p className="text-gold/70 mb-16 max-w-lg font-serif italic leading-relaxed text-xl">
+                <p className="text-gold font-medium mb-16 max-w-lg font-serif italic leading-relaxed text-xl">
                   "Chúc mừng bạn đã hoàn thành tất cả các thử thách. 
                   Bạn thực sự là một chuyên gia về lịch sử và văn hóa Văn miếu Mao Điền!"
                 </p>

@@ -146,7 +146,7 @@
 }
 
 .markdown-body {
-  @apply space-y-4 text-stone-700;
+  @apply space-y-4 text-stone-900 font-medium;
 }
 
 .markdown-body p {
@@ -174,5 +174,5 @@
 .markdown-body h3 { @apply text-xl; }
 
 .markdown-body blockquote {
-  @apply border-l-4 border-stone-300 pl-6 py-2 italic text-stone-500 font-serif;
+  @apply border-l-4 border-stone-900 pl-6 py-2 italic text-stone-500 font-serif;
 }

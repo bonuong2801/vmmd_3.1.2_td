@@ -72,7 +72,7 @@ export default function VirtualTour() {
           <div>
             <div className="flex items-center gap-4 mb-4 md:mb-6">
               <div className="h-px w-8 bg-burgundy/20" />
-              <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-burgundy/60">
+              <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-stone-900 font-bold">
                 Hình ảnh 360° Sống động
               </span>
               <div className="h-px w-8 bg-burgundy/20" />
@@ -81,7 +81,7 @@ export default function VirtualTour() {
               Hình ảnh <br />
               <span className="italic font-normal text-burgundy">Văn miếu 360°</span>
             </h2>
-            <p className="text-base md:text-lg text-olive/80 font-serif italic leading-relaxed max-w-2xl">
+            <p className="text-base md:text-lg text-stone-900 font-serif font-semibold italic leading-relaxed max-w-2xl">
               "Chúng tôi đã tái hiện hình ảnh 360° chân thực. 
               Hãy xoay góc nhìn để khám phá khuôn viên Văn Miếu từ bên trong với sự tự do 360°."
             </p>
@@ -90,11 +90,11 @@ export default function VirtualTour() {
           <div className="flex flex-wrap gap-4 md:gap-6">
             <div className="flex items-center gap-3 bg-white/50 px-4 md:px-6 py-2 md:py-3 rounded-full border border-burgundy/10 shadow-sm oriental-border">
               <RotateCcw size={12} className="text-burgundy/60" />
-              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold text-burgundy/80">Kéo để Xoay</span>
+              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.4em] font-bold text-stone-900 font-bold">Kéo để Xoay</span>
             </div>
             <div className="flex items-center gap-3 bg-white/50 px-4 md:px-6 py-2 md:py-3 rounded-full border border-burgundy/10 shadow-sm oriental-border">
               <Maximize2 size={12} className="text-burgundy/60" />
-              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold text-burgundy/80">Cuộn để Phóng to</span>
+              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.4em] font-bold text-stone-900 font-bold">Cuộn để Phóng to</span>
             </div>
           </div>
         </div>

@@ -59,7 +59,7 @@ export default function Timeline() {
                   </div>
                   <h3 className="text-[clamp(3rem,12vw,6rem)] md:text-[clamp(6rem,15vw,9rem)] font-serif font-bold text-burgundy mb-6 tracking-tighter">{item.year}</h3>
                   <h4 className="text-[12px] font-bold text-olive/60 mb-8 tracking-[0.4em] uppercase">{item.event}</h4>
-                  <p className="text-olive/80 font-serif italic leading-relaxed text-xl max-w-md mx-auto md:mx-0 mb-10">
+                  <p className="text-stone-900 font-serif italic leading-relaxed text-xl max-w-md mx-auto md:mx-0 mb-10">
                     {item.description}
                   </p>
                   <button
@@ -135,11 +135,11 @@ export default function Timeline() {
                     <h3 className="text-4xl font-serif font-bold text-ink leading-tight">{selectedEvent.event}</h3>
                   </div>
                   <div className="space-y-6">
-                    <p className="text-stone-600 text-lg font-serif italic leading-relaxed">
+                    <p className="text-stone-900 text-lg font-serif italic leading-relaxed">
                       {selectedEvent.description}
                     </p>
                     <div className="h-px w-12 bg-burgundy/20" />
-                    <p className="text-stone-500 leading-relaxed">
+                    <p className="text-stone-900 leading-relaxed">
                       {selectedEvent.details}
                     </p>
                   </div>

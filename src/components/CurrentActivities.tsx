@@ -37,7 +37,7 @@ export default function CurrentActivities() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-stone-600 text-lg font-serif italic max-w-2xl"
+            className="text-stone-900 text-lg font-serif font-semibold italic max-w-2xl"
           >
             Không chỉ là nơi lưu giữ quá khứ, Văn Miếu Mao Điền vẫn đang tiếp tục sứ mệnh tôn vinh đạo học qua các hoạt động văn hóa, giáo dục đương đại.
           </motion.p>
@@ -75,10 +75,10 @@ export default function CurrentActivities() {
                   <h3 className="text-2xl font-serif font-bold text-ink mb-4 group-hover:text-burgundy transition-colors">
                     {activity.title}
                   </h3>
-                  <p className="text-stone-600 leading-relaxed mb-6 font-serif italic line-clamp-2">
+                  <p className="text-stone-900 leading-relaxed mb-6 font-serif font-semibold italic line-clamp-2">
                     {activity.description}
                   </p>
-                  <div className="flex items-center gap-2 text-burgundy/40 group-hover:text-burgundy transition-colors">
+                  <div className="flex items-center gap-2 text-burgundy/80 group-hover:text-burgundy transition-colors">
                     <Info size={16} />
                     <span className="text-[10px] uppercase tracking-[0.2em] font-bold">Tìm hiểu thêm</span>
                   </div>

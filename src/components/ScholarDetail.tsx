@@ -20,7 +20,7 @@ export default function ScholarDetail() {
           <h2 className="text-2xl font-serif mb-4">Không tìm thấy thông tin danh nhân</h2>
           <button 
             onClick={() => navigate(-1)}
-            className="text-stone-600 hover:text-stone-900 flex items-center gap-2 mx-auto"
+            className="text-stone-800 hover:text-stone-900 flex items-center gap-2 mx-auto"
           >
             <ArrowLeft size={20} /> Quay lại trang trước
           </button>
@@ -39,7 +39,7 @@ export default function ScholarDetail() {
       <div className="max-w-6xl mx-auto px-6 py-24">
         <button 
           onClick={() => navigate(-1)}
-          className="group mb-20 flex items-center gap-3 text-stone-400 hover:text-stone-900 transition-all uppercase text-[10px] font-bold tracking-[0.3em]"
+          className="group mb-20 flex items-center gap-3 text-stone-800 hover:text-stone-900 transition-all uppercase text-[10px] font-bold tracking-[0.3em]"
         >
           <ArrowLeft size={16} className="group-hover:-translate-x-2 transition-transform" />
           Quay lại trang trước
@@ -72,14 +72,14 @@ export default function ScholarDetail() {
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-px bg-stone-300" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-stone-400">
+                <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-stone-800">
                   {scholar.title}
                 </span>
               </div>
               <h1 className="text-5xl md:text-7xl font-serif font-light leading-[0.9] tracking-tighter mb-6">
                 {scholar.name}
               </h1>
-              <div className="flex items-center gap-3 text-stone-500 font-serif italic text-lg">
+              <div className="flex items-center gap-3 text-stone-900 font-serif font-semibold italic text-lg">
                 <Calendar size={20} strokeWidth={1.5} />
                 <span>Thời kỳ: {scholar.period}</span>
               </div>
@@ -90,27 +90,27 @@ export default function ScholarDetail() {
                 <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                   <Award size={120} />
                 </div>
-                <div className="flex items-center gap-3 mb-6 text-stone-400">
+                <div className="flex items-center gap-3 mb-6 text-stone-800">
                   <Award size={20} strokeWidth={1.5} />
                   <span className="text-[10px] font-bold uppercase tracking-[0.3em]">Thành tựu chính</span>
                 </div>
-                <p className="text-xl md:text-2xl text-stone-800 font-serif italic leading-tight relative z-10">
+                <p className="text-xl md:text-2xl text-stone-900 font-serif font-semibold italic leading-tight relative z-10">
                   "{scholar.achievement}"
                 </p>
               </div>
 
               <div className="space-y-6">
-                <div className="flex items-center gap-3 text-stone-400">
+                <div className="flex items-center gap-3 text-stone-800">
                   <Book size={20} strokeWidth={1.5} />
                   <span className="text-[10px] font-bold uppercase tracking-[0.3em]">Tiểu sử & Sự nghiệp</span>
                 </div>
-                <p className="text-stone-600 font-light leading-relaxed text-lg md:text-xl font-serif">
+                <p className="text-stone-900 font-semibold leading-relaxed text-lg md:text-xl font-serif">
                   {scholar.biography}
                 </p>
               </div>
 
               <div className="pt-12 border-t border-stone-200">
-                <p className="text-stone-500 font-light leading-relaxed text-base italic">
+                <p className="text-stone-800 font-semibold leading-relaxed text-base italic">
                   {scholar.description}
                 </p>
               </div>

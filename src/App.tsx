@@ -1,7 +1,21 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import { motion, useScroll, useSpring, AnimatePresence, Reorder } from "motion/react";
 import { useEffect, useState, lazy, Suspense, useCallback, useMemo } from "react";
 import { BookOpen, Map as MapIcon, History, GraduationCap, Gamepad2, Eye, Menu, X as CloseIcon, ChevronUp, Mail, Phone, MapPin, Loader2, Camera, Info } from "lucide-react";
+
+// ScrollToTop component to handle scroll reset on route changes
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  
+  return null;
+}
+
+import ScholarDetail from "./components/ScholarDetail";
+import ActivityDetail from "./components/ActivityDetail";
 
 // Lazy load components for better initial bundle size
 const Hero = lazy(() => import("./components/Hero"));
@@ -12,7 +26,6 @@ const Scholars = lazy(() => import("./components/Scholars"));
 const PuzzleGame = lazy(() => import("./components/PuzzleGame"));
 const Photobooth = lazy(() => import("./components/Photobooth"));
 const VirtualGuide = lazy(() => import("./components/VirtualGuide"));
-const ScholarDetail = lazy(() => import("./components/ScholarDetail"));
 const CurrentActivities = lazy(() => import("./components/CurrentActivities"));
 
 function LoadingFallback() {
@@ -21,7 +34,7 @@ function LoadingFallback() {
       <div className="w-20 h-20 rounded-3xl bg-burgundy/5 border border-gold/20 flex items-center justify-center animate-pulse mb-6">
         <Loader2 className="text-burgundy animate-spin" size={32} />
       </div>
-      <span className="text-[10px] uppercase tracking-[0.4em] text-burgundy/40 font-bold">Đang tải tinh hoa...</span>
+      <span className="text-[10px] uppercase tracking-[0.4em] text-burgundy/90 font-bold">Đang tải tinh hoa...</span>
     </div>
   );
 }
@@ -115,9 +128,9 @@ function HomePage() {
           <button
             key={item.id}
             onClick={() => scrollToSection(item.id)}
-            className="flex items-center gap-2 lg:gap-3 text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.15em] lg:tracking-[0.2em] text-ink/70 hover:text-burgundy transition-all duration-300 group whitespace-nowrap"
+            className="flex items-center gap-2 lg:gap-3 text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.15em] lg:tracking-[0.2em] text-ink hover:text-burgundy transition-all duration-300 group whitespace-nowrap"
           >
-            <span className="text-burgundy/40 group-hover:text-burgundy transition-colors hidden xl:inline">{item.icon}</span>
+            <span className="text-burgundy/90 group-hover:text-burgundy transition-colors hidden xl:inline">{item.icon}</span>
             <span className="relative">
               {item.label}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-burgundy transition-all duration-300 group-hover:w-full" />
@@ -154,9 +167,9 @@ function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 onClick={() => scrollToSection(item.id)}
-                className="flex items-center gap-4 text-2xl font-serif italic text-stone-400 hover:text-white transition-colors"
+                className="flex items-center gap-4 text-2xl font-serif italic text-white hover:text-white transition-colors"
               >
-                <span className="text-stone-700 font-mono text-sm">0{index + 1}</span>
+                <span className="text-white/80 font-mono text-sm">0{index + 1}</span>
                 {item.label}
               </motion.button>
             ))}
@@ -205,22 +218,22 @@ function HomePage() {
                 </div>
                 <div>
                   <h2 className="text-xl md:text-4xl font-serif font-bold tracking-tight text-white">Văn Miếu</h2>
-                  <p className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-gold/60 font-bold">Mao Điền • Hải Phòng</p>
+                  <p className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-gold font-bold">Mao Điền • Hải Phòng</p>
                 </div>
               </div>
-              <p className="text-stone-400 text-sm md:text-lg font-serif italic leading-relaxed max-w-sm">
+              <p className="text-white/90 text-sm md:text-lg font-serif font-semibold italic leading-relaxed max-w-sm">
                 "Nơi tôn vinh đạo học, gìn giữ tinh hoa văn hóa và truyền thống hiếu học của người dân Hải Phòng qua nhiều thế kỷ."
               </p>
             </div>
             
             <div className="space-y-6 md:space-y-10">
-              <h3 className="text-[9px] md:text-[11px] font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] text-gold/50 border-b border-gold/10 pb-3 md:pb-4">Liên kết Nhanh</h3>
+              <h3 className="text-[9px] md:text-[11px] font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] text-gold border-b border-gold/10 pb-3 md:pb-4">Liên kết Nhanh</h3>
               <div className="grid grid-cols-2 gap-x-4 md:gap-x-8 gap-y-3 md:gap-y-5">
                 {navItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="text-stone-400 hover:text-gold text-[11px] md:text-sm transition-colors text-left font-medium tracking-wide flex items-center gap-2 group"
+                    className="text-white/90 hover:text-gold text-[11px] md:text-sm transition-colors text-left font-semibold tracking-wide flex items-center gap-2 group"
                   >
                     <span className="w-1 h-1 rounded-full bg-gold/20 group-hover:bg-gold transition-colors" />
                     {item.label}
@@ -230,22 +243,22 @@ function HomePage() {
             </div>
 
             <div className="space-y-6 md:space-y-10">
-              <h3 className="text-[9px] md:text-[11px] font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] text-gold/50 border-b border-gold/10 pb-3 md:pb-4">Thông tin liên hệ</h3>
+              <h3 className="text-[9px] md:text-[11px] font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] text-gold border-b border-gold/10 pb-3 md:pb-4">Thông tin liên hệ</h3>
               <div className="space-y-4 md:space-y-6">
                 <div className="flex gap-4 items-start">
-                  <MapPin size={16} className="text-gold/40 shrink-0 mt-1" />
-                  <p className="text-stone-400 text-[11px] md:text-sm font-medium leading-relaxed">
+                  <MapPin size={16} className="text-gold shrink-0 mt-1" />
+                  <p className="text-white/90 text-[11px] md:text-sm font-semibold leading-relaxed">
                     Xã Mao Điền, Thành phố Hải Phòng,<br />
                     Việt Nam
                   </p>
                 </div>
                 <div className="flex gap-4 items-center">
-                  <Mail size={16} className="text-gold/40 shrink-0" />
-                  <p className="text-stone-400 text-[11px] md:text-sm font-medium">duong28012009@gmail.com</p>
+                  <Mail size={16} className="text-gold shrink-0" />
+                  <p className="text-white/90 text-[11px] md:text-sm font-semibold">contact@vanmieumaodien.vn</p>
                 </div>
                 <div className="flex gap-4 items-center">
-                  <Phone size={16} className="text-gold/40 shrink-0" />
-                  <p className="text-stone-400 text-[11px] md:text-sm font-medium">+84 (0) 868 814 282</p>
+                  <Phone size={16} className="text-gold/80 shrink-0" />
+                  <p className="text-white/90 text-[11px] md:text-sm font-semibold">+84 (0) 123 456 789</p>
                 </div>
               </div>
             </div>
@@ -254,29 +267,29 @@ function HomePage() {
           <div className="pt-12 border-t border-white/5 flex flex-col items-center text-center gap-8">
             <div className="flex items-center gap-4">
               <div className="h-px w-8 md:w-16 bg-gold/20" />
-              <p className="text-[8px] md:text-[11px] uppercase tracking-[0.3em] md:tracking-[0.5em] text-gold/40 font-bold">
+              <p className="text-[8px] md:text-[11px] uppercase tracking-[0.3em] md:tracking-[0.5em] text-gold/80 font-bold">
                 DI TÍCH QUỐC GIA ĐẶC BIỆT
               </p>
               <div className="h-px w-8 md:w-16 bg-gold/20" />
             </div>
             
             <div className="flex flex-col items-center gap-2 md:gap-4">
-              <p className="text-xl md:text-4xl font-serif italic text-white/90 uppercase tracking-[0.2em] md:tracking-[0.3em]">
+              <p className="text-xl md:text-4xl font-serif italic text-white uppercase tracking-[0.2em] md:tracking-[0.3em]">
                 by tunggduongg
               </p>
               <div className="w-12 md:w-24 h-1 bg-burgundy rounded-full" />
             </div>
 
             <div className="flex flex-wrap justify-center gap-3 md:gap-8">
-              <span className="text-[8px] md:text-[10px] uppercase tracking-[0.2em] text-stone-500 font-bold px-4 md:px-8 py-2 md:py-3 border border-white/10 rounded-full bg-white/5">
+              <span className="text-[8px] md:text-[10px] uppercase tracking-[0.2em] text-white/80 font-bold px-4 md:px-8 py-2 md:py-3 border border-white/10 rounded-full bg-white/5">
                 STEM Heritage Project
               </span>
-              <span className="text-[8px] md:text-[10px] uppercase tracking-[0.2em] text-stone-500 font-bold px-4 md:px-8 py-2 md:py-3 border border-white/10 rounded-full bg-white/5">
+              <span className="text-[8px] md:text-[10px] uppercase tracking-[0.2em] text-white/80 font-bold px-4 md:px-8 py-2 md:py-3 border border-white/10 rounded-full bg-white/5">
                 Digital Preservation
               </span>
             </div>
             
-            <p className="text-stone-600 text-[8px] md:text-[10px] uppercase tracking-[0.2em] font-bold">
+            <p className="text-white/80 text-[8px] md:text-[10px] uppercase tracking-[0.2em] font-bold">
               © 2026 Văn Miếu Mao Điền. All Rights Reserved.
             </p>
           </div>
@@ -290,24 +303,23 @@ function HomePage() {
   );
 }
 
-const ActivityDetail = lazy(() => import("./components/ActivityDetail"));
-
 function App() {
+  useEffect(() => {
+    // Prevent browser from restoring scroll position
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <AnimatePresence mode="wait">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/scholar/:id" element={
-            <Suspense fallback={<LoadingFallback />}>
-              <ScholarDetail />
-            </Suspense>
-          } />
-          <Route path="/activity/:id" element={
-            <Suspense fallback={<LoadingFallback />}>
-              <ActivityDetail />
-            </Suspense>
-          } />
+          <Route path="/scholar/:id" element={<ScholarDetail />} />
+          <Route path="/activity/:id" element={<ActivityDetail />} />
         </Routes>
       </AnimatePresence>
     </BrowserRouter>

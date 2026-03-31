@@ -79,26 +79,26 @@ export default function Hero() {
             </div>
           </div>
 
-          <p className="text-stone-300 text-xl md:text-2xl font-serif italic max-w-3xl mx-auto leading-relaxed mb-10 opacity-90">
+          <p className="text-white text-xl md:text-2xl font-serif font-semibold italic max-w-3xl mx-auto leading-relaxed mb-10 opacity-100">
             "Nơi hội tụ khí thiêng sông núi, biểu tượng của tinh thần hiếu học và truyền thống khoa bảng ngàn năm của vùng đất Hải Phòng."
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-12 text-[10px] text-gold/60 uppercase tracking-[0.3em] font-bold mb-12">
+          <div className="flex flex-wrap items-center justify-center gap-12 text-[10px] text-gold/80 uppercase tracking-[0.3em] font-bold mb-12">
             <div className="flex items-center gap-4 group cursor-default">
               <div className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center group-hover:border-gold transition-colors">
-                <MapPin size={16} className="text-gold/40" />
+                <MapPin size={16} className="text-gold/60" />
               </div>
               <span>Hải Phòng, Việt Nam</span>
             </div>
             <div className="flex items-center gap-4 group cursor-default">
               <div className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center group-hover:border-gold transition-colors">
-                <Calendar size={16} className="text-gold/40" />
+                <Calendar size={16} className="text-gold/60" />
               </div>
               <span>Thế kỷ XV</span>
             </div>
             <div className="flex items-center gap-4 group cursor-default">
               <div className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center group-hover:border-gold transition-colors">
-                <GraduationCap size={16} className="text-gold/40" />
+                <GraduationCap size={16} className="text-gold/60" />
               </div>
               <span>637 Tiến sĩ</span>
             </div>
@@ -116,7 +116,7 @@ export default function Hero() {
             <motion.button
               onClick={() => setIsVideoOpen(true)}
               whileHover={{ scale: 1.05 }}
-              className="group flex items-center gap-5 text-white/80 hover:text-gold transition-colors"
+              className="group flex items-center gap-5 text-white/90 font-medium hover:text-gold transition-colors"
             >
               <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center group-hover:border-gold transition-colors bg-white/5 backdrop-blur-sm shadow-xl">
                 <Play size={24} fill="currentColor" />

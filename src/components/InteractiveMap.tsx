@@ -59,16 +59,16 @@ export default function InteractiveMap() {
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="h-px w-8 bg-burgundy/20" />
-                <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-burgundy/60">
+                <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-burgundy/90">
                   Sơ đồ Kiến trúc
                 </span>
                 <div className="h-px w-8 bg-burgundy/20" />
               </div>
               <h2 className="text-[clamp(2rem,8vw,4rem)] md:text-[clamp(4rem,10vw,7rem)] font-serif font-bold mb-6 md:mb-10 leading-[0.9] tracking-tight">
                 Khám phá <br />
-                <span className="italic font-normal text-burgundy">Khuôn viên</span>
+                <span className="italic font-semibold text-burgundy">Khuôn viên</span>
               </h2>
-              <p className="text-base md:text-lg text-olive/80 mb-8 md:mb-14 font-serif italic leading-relaxed max-w-md">
+              <p className="text-base md:text-lg text-stone-900 mb-8 md:mb-14 font-serif font-semibold italic leading-relaxed max-w-md">
                 "Văn miếu Mao Điền được thiết kế với bố cục kiến trúc truyền thống, 
                 đối xứng và hài hòa, mang đậm dấu ấn văn hóa Nho giáo Việt Nam."
               </p>
@@ -81,16 +81,16 @@ export default function InteractiveMap() {
                     className={`w-full text-left p-6 rounded-2xl border transition-all duration-500 flex items-center justify-between group oriental-border ${
                       selectedArea?.id === area.id 
                       ? "bg-burgundy text-white border-gold shadow-2xl translate-x-3" 
-                      : "bg-white/50 text-olive/70 border-burgundy/5 hover:border-burgundy/20 hover:bg-white"
+                      : "bg-white/50 text-stone-900 font-medium border-burgundy/5 hover:border-burgundy/20 hover:bg-white"
                     }`}
                   >
                     <div className="flex items-center gap-5">
-                      <span className={`text-[11px] font-mono font-bold ${selectedArea?.id === area.id ? "text-gold/60" : "text-burgundy/20"}`}>
+                      <span className={`text-[11px] font-mono font-bold ${selectedArea?.id === area.id ? "text-gold/90" : "text-burgundy/40"}`}>
                         0{index + 1}
                       </span>
-                      <span className="font-medium tracking-[0.1em] text-sm uppercase">{area.name}</span>
+                      <span className="font-semibold tracking-[0.1em] text-sm uppercase">{area.name}</span>
                     </div>
-                    <Navigation size={14} className={`transition-transform duration-500 ${selectedArea?.id === area.id ? "text-gold/60 rotate-45" : "text-burgundy/20 group-hover:text-burgundy/40"}`} />
+                    <Navigation size={14} className={`transition-transform duration-500 ${selectedArea?.id === area.id ? "text-gold/90 rotate-45" : "text-burgundy/40 group-hover:text-burgundy/90"}`} />
                   </button>
                 ))}
               </div>
@@ -157,17 +157,17 @@ export default function InteractiveMap() {
                       <div className="flex-1 p-8 md:p-10 flex flex-col justify-center">
                         <div className="flex justify-between items-start mb-4">
                           <div>
-                            <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-burgundy/60 mb-2 block">Thông tin Khu vực</span>
+                            <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-burgundy/90 mb-2 block">Thông tin Khu vực</span>
                             <h3 className="text-2xl md:text-3xl font-serif font-bold text-ink">{selectedArea.name}</h3>
                           </div>
                           <button 
                             onClick={() => handleAreaSelect(null)}
                             className="w-10 h-10 bg-burgundy/5 hover:bg-burgundy/10 rounded-full flex items-center justify-center transition-colors"
                           >
-                            <X size={18} className="text-burgundy/40" />
+                            <X size={18} className="text-burgundy/70" />
                           </button>
                         </div>
-                        <p className="text-olive/80 leading-relaxed font-serif italic text-base md:text-lg">
+                        <p className="text-stone-900 leading-relaxed font-serif font-semibold italic text-base md:text-lg">
                           {selectedArea.description}
                         </p>
                       </div>

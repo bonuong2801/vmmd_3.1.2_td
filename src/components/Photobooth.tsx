@@ -46,7 +46,7 @@ const LayoutButton = memo(({ active, onClick, icon: Icon, label }: any) => (
   <button
     onClick={onClick}
     className={`flex flex-col items-center gap-2 p-3 rounded-2xl border-2 transition-all duration-300 ${
-      active ? "border-burgundy bg-burgundy/5 text-burgundy" : "border-transparent bg-warm-bg text-olive/40 hover:text-olive"
+      active ? "border-burgundy bg-burgundy/5 text-burgundy" : "border-transparent bg-warm-bg text-stone-900 hover:text-stone-900"
     }`}
   >
     <Icon size={20} />
@@ -374,7 +374,7 @@ export default function Photobooth() {
                   </motion.div>
                   <div className="space-y-2">
                     <h3 className="text-white font-serif text-xl md:text-2xl">Lưu giữ khoảnh khắc</h3>
-                    <p className="text-stone-400 text-xs md:text-sm max-w-xs mx-auto">Chụp ảnh với khung hình di sản Văn Miếu Mao Điền đặc sắc.</p>
+                    <p className="text-stone-100 text-xs md:text-sm max-w-xs mx-auto">Chụp ảnh với khung hình di sản Văn Miếu Mao Điền đặc sắc.</p>
                   </div>
                   <button
                     onClick={startCamera}
@@ -573,7 +573,7 @@ export default function Photobooth() {
                   className="space-y-4"
                 >
                   <div className="p-6 bg-gold/10 rounded-3xl border border-gold/20 shadow-inner">
-                    <p className="text-[11px] text-olive/70 leading-relaxed italic mb-4">
+                    <p className="text-[11px] text-stone-900 font-semibold leading-relaxed italic mb-4">
                       "Tuyệt tác di sản của bạn đã sẵn sàng!"
                     </p>
                     <button
