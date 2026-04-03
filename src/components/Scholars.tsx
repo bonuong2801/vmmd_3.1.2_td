@@ -26,7 +26,7 @@ export default function Scholars() {
                 Bảng vàng danh dự
               </span>
             </div>
-            <h2 className="text-[clamp(2.5rem,10vw,5rem)] md:text-[clamp(5rem,15vw,9rem)] font-serif font-bold leading-[0.85] tracking-tighter">
+            <h2 className="text-[clamp(2.5rem,10vw,5rem)] md:text-[clamp(5rem,15vw,9rem)] font-serif font-bold leading-[1.1] tracking-tight">
               Những bậc <br />
               <span className="italic font-semibold text-burgundy">Hiền tài</span>
             </h2>

@@ -221,7 +221,7 @@ function HomePage() {
                   <p className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-gold font-bold">Mao Điền • Hải Phòng</p>
                 </div>
               </div>
-              <p className="text-white/90 text-sm md:text-lg font-serif font-semibold italic leading-relaxed max-w-sm">
+              <p className="text-white/80 text-sm md:text-lg font-serif font-semibold italic leading-relaxed max-w-sm">
                 "Nơi tôn vinh đạo học, gìn giữ tinh hoa văn hóa và truyền thống hiếu học của người dân Hải Phòng qua nhiều thế kỷ."
               </p>
             </div>

@@ -86,19 +86,19 @@ export default function Hero() {
           <div className="flex flex-wrap items-center justify-center gap-12 text-[10px] text-gold/80 uppercase tracking-[0.3em] font-bold mb-12">
             <div className="flex items-center gap-4 group cursor-default">
               <div className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center group-hover:border-gold transition-colors">
-                <MapPin size={16} className="text-gold/60" />
+                <MapPin size={16} className="text-gold/80" />
               </div>
               <span>Hải Phòng, Việt Nam</span>
             </div>
             <div className="flex items-center gap-4 group cursor-default">
               <div className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center group-hover:border-gold transition-colors">
-                <Calendar size={16} className="text-gold/60" />
+                <Calendar size={16} className="text-gold/80" />
               </div>
               <span>Thế kỷ XV</span>
             </div>
             <div className="flex items-center gap-4 group cursor-default">
               <div className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center group-hover:border-gold transition-colors">
-                <GraduationCap size={16} className="text-gold/60" />
+                <GraduationCap size={16} className="text-gold/80" />
               </div>
               <span>637 Tiến sĩ</span>
             </div>
@@ -121,7 +121,7 @@ export default function Hero() {
               <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center group-hover:border-gold transition-colors bg-white/5 backdrop-blur-sm shadow-xl">
                 <Play size={24} fill="currentColor" />
               </div>
-              <span className="text-[10px] font-bold uppercase tracking-[0.4em]">Xem phim tư liệu</span>
+              <span className="text-[11px] font-bold uppercase tracking-[0.4em]">Xem phim tư liệu</span>
             </motion.button>
           </div>
         </motion.div>
