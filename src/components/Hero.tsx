@@ -83,21 +83,21 @@ export default function Hero() {
             "Nơi hội tụ khí thiêng sông núi, biểu tượng của tinh thần hiếu học và truyền thống khoa bảng ngàn năm của vùng đất Hải Phòng."
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-12 text-[10px] text-gold/80 uppercase tracking-[0.3em] font-bold mb-12">
+          <div className="flex flex-wrap items-center justify-center gap-12 text-[11px] text-gold uppercase tracking-[0.3em] font-black mb-12">
             <div className="flex items-center gap-4 group cursor-default">
-              <div className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center group-hover:border-gold transition-colors">
+              <div className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center group-hover:border-gold transition-colors">
                 <MapPin size={16} className="text-gold/80" />
               </div>
               <span>Hải Phòng, Việt Nam</span>
             </div>
             <div className="flex items-center gap-4 group cursor-default">
-              <div className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center group-hover:border-gold transition-colors">
+              <div className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center group-hover:border-gold transition-colors">
                 <Calendar size={16} className="text-gold/80" />
               </div>
               <span>Thế kỷ XV</span>
             </div>
             <div className="flex items-center gap-4 group cursor-default">
-              <div className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center group-hover:border-gold transition-colors">
+              <div className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center group-hover:border-gold transition-colors">
                 <GraduationCap size={16} className="text-gold/80" />
               </div>
               <span>637 Tiến sĩ</span>

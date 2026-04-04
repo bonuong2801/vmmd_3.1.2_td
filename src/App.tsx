@@ -1,18 +1,9 @@
 import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import { motion, useScroll, useSpring, AnimatePresence, Reorder } from "motion/react";
-import { useEffect, useState, lazy, Suspense, useCallback, useMemo } from "react";
+import { useEffect, useState, lazy, Suspense, useCallback, useMemo, useLayoutEffect } from "react";
 import { BookOpen, Map as MapIcon, History, GraduationCap, Gamepad2, Eye, Menu, X as CloseIcon, ChevronUp, Mail, Phone, MapPin, Loader2, Camera, Info } from "lucide-react";
 
-// ScrollToTop component to handle scroll reset on route changes
-function ScrollToTop() {
-  const { pathname } = useLocation();
-  
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  
-  return null;
-}
+// Removed ScrollToTop component as we now handle scroll restoration per-page
 
 import ScholarDetail from "./components/ScholarDetail";
 import ActivityDetail from "./components/ActivityDetail";
@@ -52,8 +43,50 @@ function HomePage() {
     restDelta: 0.001
   });
 
+  useLayoutEffect(() => {
+    const savedScrollY = sessionStorage.getItem('homeScrollY');
+    const savedHeight = sessionStorage.getItem('homeScrollHeight');
+    
+    // Temporarily disable smooth scrolling to prevent visible jump
+    const originalScrollBehavior = document.documentElement.style.scrollBehavior;
+    document.documentElement.style.scrollBehavior = 'auto';
+
+    if (savedScrollY) {
+      const scrollPos = parseInt(savedScrollY, 10);
+      
+      // Force the body to be tall enough IMMEDIATELY before paint
+      if (savedHeight) {
+        document.body.style.minHeight = `${savedHeight}px`;
+      } else {
+        document.body.style.minHeight = `${scrollPos + window.innerHeight}px`;
+      }
+      
+      // Scroll synchronously
+      window.scrollTo(0, scrollPos);
+
+      // Clean up the minHeight and restore smooth scrolling after components load
+      const timeoutId = setTimeout(() => {
+        document.body.style.minHeight = '';
+        document.documentElement.style.scrollBehavior = originalScrollBehavior;
+      }, 500);
+
+      return () => {
+        clearTimeout(timeoutId);
+        document.body.style.minHeight = '';
+        document.documentElement.style.scrollBehavior = originalScrollBehavior;
+      };
+    } else {
+      window.scrollTo(0, 0);
+      document.documentElement.style.scrollBehavior = originalScrollBehavior;
+    }
+  }, []);
+
   useEffect(() => {
-    window.scrollTo(0, 0);
+    return () => {
+      // Save scroll position and height when leaving HomePage
+      sessionStorage.setItem('homeScrollY', window.scrollY.toString());
+      sessionStorage.setItem('homeScrollHeight', document.documentElement.scrollHeight.toString());
+    };
   }, []);
 
   useEffect(() => {
@@ -221,7 +254,7 @@ function HomePage() {
                   <p className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-gold font-bold">Mao Điền • Hải Phòng</p>
                 </div>
               </div>
-              <p className="text-white/80 text-sm md:text-lg font-serif font-semibold italic leading-relaxed max-w-sm">
+              <p className="text-white/90 text-sm md:text-lg font-serif font-semibold italic leading-relaxed max-w-sm">
                 "Nơi tôn vinh đạo học, gìn giữ tinh hoa văn hóa và truyền thống hiếu học của người dân Hải Phòng qua nhiều thế kỷ."
               </p>
             </div>
@@ -305,16 +338,14 @@ function HomePage() {
 
 function App() {
   useEffect(() => {
-    // Prevent browser from restoring scroll position
+    // Allow browser to handle default scroll restoration where possible
     if ('scrollRestoration' in window.history) {
-      window.history.scrollRestoration = 'manual';
+      window.history.scrollRestoration = 'auto';
     }
-    window.scrollTo(0, 0);
   }, []);
 
   return (
     <BrowserRouter>
-      <ScrollToTop />
       <AnimatePresence mode="wait">
         <Routes>
           <Route path="/" element={<HomePage />} />

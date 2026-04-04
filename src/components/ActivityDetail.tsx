@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowLeft, Calendar, Info } from 'lucide-react';
@@ -8,6 +8,10 @@ const ActivityDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const activity = CURRENT_ACTIVITIES.find(a => a.id === Number(id));
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!activity) {
     return (
@@ -54,7 +58,7 @@ const ActivityDetail: React.FC = () => {
               <h1 className="text-4xl md:text-5xl font-serif text-white mb-4 leading-tight">
                 {activity.title}
               </h1>
-              <div className="flex items-center gap-4 text-white/90">
+              <div className="flex items-center gap-4 text-white">
                 <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-sm">
                   <Calendar size={16} />
                   <span>{activity.date}</span>
@@ -66,7 +70,7 @@ const ActivityDetail: React.FC = () => {
           <div className="p-8 md:p-12">
             <div className="flex items-start gap-4 mb-8 p-6 bg-[#FDFBF7] rounded-xl border-l-4 border-[#5D0E11]">
               <Info className="text-[#5D0E11] shrink-0 mt-1" size={24} />
-              <p className="text-lg text-[#5D0E11] font-medium leading-relaxed italic">
+              <p className="text-lg text-[#5D0E11] font-semibold leading-relaxed italic">
                 {activity.description}
               </p>
             </div>
